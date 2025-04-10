@@ -3,6 +3,7 @@ from common.types import AgentCard, AgentCapabilities, AgentSkill, MissingAPIKey
 from common.utils.push_notification_auth import PushNotificationSenderAuth
 from agents.langgraph.task_manager import AgentTaskManager
 from agents.langgraph.agent import CurrencyAgent
+from dotenv import load_dotenv
 import click
 import os
 import logging
@@ -12,6 +13,8 @@ load_dotenv()
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+load_dotenv()
 
 @click.command()
 @click.option("--host", "host", default="localhost")
